@@ -4,13 +4,24 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
 import com.example.konspekt1.ui.theme.Konspekt1Theme
 
 class MainActivity : ComponentActivity() {
@@ -20,10 +31,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             Konspekt1Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    BusinessCardScreen(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
@@ -31,17 +39,43 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
+fun BusinessCardScreen(modifier: Modifier = Modifier)
+{
+    // Screen state: whether the personal data is currently shown.
+    // remember         -> the value survives recomposition
+    // mutableStateOf   -> assigning a new value refreshes the UI automatically
+    var isDataVisible by remember { mutableStateOf(false) }
+
+    Column(
         modifier = modifier
+            .fillMaxSize()
+            .padding(24.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
     )
+    {
+        Button (onClick = { isDataVisible = !isDataVisible})
+        {
+            Text(
+                stringResource(if (isDataVisible) R.string.hide_data else R.string.show_data)
+            )
+        }
+
+        if(isDataVisible)
+        {
+            Text(
+                text = stringResource(R.string.full_name),
+                style = MaterialTheme.typography.headlineMedium,
+                modifier = Modifier.padding(top = 16.dp)
+            )
+        }
+    }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun BusinessCardScreenPreview() {
     Konspekt1Theme {
-        Greeting("Android")
+        BusinessCardScreen()
     }
 }
