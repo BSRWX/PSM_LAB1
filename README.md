@@ -38,7 +38,6 @@ Podejście **Jetpack Compose** okazało się dla mnie znacznie czytelniejsze. Po
 ![Kod Compose](screeny/KotlinCODE2.png)
 
 **Działanie w emulatorze:**
-> *(Miejsce na screen: uruchomiona aplikacja - dane widoczne i ukryte)*
 ![Emulator Compose - widoczne](screeny/ShownData.png)
 ![Emulator Compose - ukryte](screeny/HidedData.png)
 
@@ -46,7 +45,7 @@ Podejście **Jetpack Compose** okazało się dla mnie znacznie czytelniejsze. Po
 
 **Podgląd struktury projektu, kodu i XML:**
 ![Kod Views](screeny/JavaMainActivity.png)
-![XML Views](screeny/AddedXMLView.png.png)
+![XML Views](screeny/AddedXMLView.png)
 
 **Działanie w emulatorze:**
 ![Emulator Views - widoczne](screeny/ShowDataJava.png)
@@ -55,5 +54,5 @@ Podejście **Jetpack Compose** okazało się dla mnie znacznie czytelniejsze. Po
 ---
 ### 4. Uwagi z realizacji (Napotkane problemy)
 
-W trakcie wykonywania laboratorium napotkałem na dodatkowe problemy konfiguracyjne środowiska Android Studio, co znacząco wydłużyło proces uruchomienia aplikacji:
+W trakcie wykonywania laboratorium napotkałem na dodatkowe problemy konfiguracyjne środowiska Android Studio:
 1. **Emulator Systemu:** Po przystąpieniu do pracy kolejnego dnia emulator systemu nie chciał wstać i sypał błędami Terminated po czym wymagał operacji Wipe Data i Cold Boot
