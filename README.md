@@ -50,9 +50,3 @@ Podejście **Jetpack Compose** okazało się dla mnie znacznie czytelniejsze. Po
 **Działanie w emulatorze:**
 ![Emulator Views - widoczne](screeny/ShowDataJava.png)
 ![Emulator Views - ukryte](screeny/HideDataJava.png)
-
----
-### 4. Uwagi z realizacji (Napotkane problemy)
-
-W trakcie wykonywania laboratorium napotkałem na dodatkowe problemy konfiguracyjne środowiska Android Studio:
-1. **Emulator Systemu:** Po przystąpieniu do pracy kolejnego dnia emulator systemu nie chciał wstać i sypał błędami Terminated po czym wymagał operacji Wipe Data i Cold Boot
